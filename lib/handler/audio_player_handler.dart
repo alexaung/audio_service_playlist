@@ -150,8 +150,10 @@ class AudioPlayerHandlerImpl extends BaseAudioHandler
     await _player.setVolume(volume);
   }
 
-  AudioPlayerHandlerImpl() {
-    _init();
+  AudioPlayerHandlerImpl()  {
+    
+      _init();
+    _listenForDurationChanges();
   }
 
   Future<void> _init() async {

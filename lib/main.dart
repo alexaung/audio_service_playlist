@@ -89,8 +89,7 @@ class MainScreen extends StatelessWidget {
               ),
             ),
             // Playback controls
-            ControlButtons(
-              audioHandler: _audioHandler,
+            const ControlButtons(
             ),
             // A seek bar.
             StreamBuilder<PositionData>(
@@ -232,13 +231,14 @@ class MainScreen extends StatelessWidget {
 }
 
 class ControlButtons extends StatelessWidget {
-  final AudioPlayerHandler audioHandler;
+  //final AudioPlayerHandler audioHandler;
 
-  const ControlButtons({Key? key, required this.audioHandler})
+  const ControlButtons({Key? key})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+     final audioHandler = getIt<AudioPlayerHandler>();
     return Row(
       mainAxisSize: MainAxisSize.min,
       children: [
